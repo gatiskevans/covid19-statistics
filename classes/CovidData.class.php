@@ -8,7 +8,8 @@
         {
             if(($file = fopen('data/data.csv', 'r')) !== false){
                 while(($data = fgetcsv($file, 1000, ';')) !== false) {
-                    $this->dataList[] = mb_convert_encoding($data, 'UTF-8');
+                    $data = str_replace(PHP_EOL, ' ', $data);
+                    $this->dataList[] = $data;
                 }
                 fclose($file);
             }

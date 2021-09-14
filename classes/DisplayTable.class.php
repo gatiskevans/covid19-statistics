@@ -6,6 +6,7 @@
         {
             $table = str_repeat("-", 220) . "\n";
             foreach($dataTable as $index => $row){
+
                 $table .= "| ";
 
                 $table .= $this->columnSize($this->getDate($index), 11);
